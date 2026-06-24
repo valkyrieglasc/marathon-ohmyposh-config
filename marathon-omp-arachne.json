@@ -1,0 +1,158 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#C00411",
+          "foreground": "#000000",
+          "options": {
+            "arch": "\uf303",
+            "debian": "\uf306",
+            "fedora": "\uf30a",
+            "linux": "\uf17c",
+            "macos": "\uf179",
+            "manjaro": "\uf312",
+            "opensuse": "\uf314",
+            "ubuntu": "\uf31b",
+            "windows": "\uf17a"
+          },
+          "style": "plain",
+          "template": " [ {{ .Icon }}  ] ",
+          "type": "os"
+        },
+        {
+          "background": "#FF0055",
+          "foreground": "#FFFFFF",
+          "options": {
+            "always_enabled": false
+          },
+          "style": "plain",
+          "template": " [ ROOT ] ",
+          "type": "root"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#FFFFFF",
+          "options": {
+            "folder_icon": "",
+            "folder_separator_icon": "/",
+            "home_icon": "~",
+            "max_depth": 3,
+            "style": "agnoster_short"
+          },
+          "style": "plain",
+          "template": " \u2502   {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#B51124",
+          "options": {
+            "branch_template": "{{ trunc 15 .Branch }}",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": " \u2502 SYNC: {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \u2591{{ end }} ",
+          "type": "git"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#B51124",
+          "options": {
+            "always_enabled": false,
+            "threshold": 2000
+          },
+          "style": "plain",
+          "template": " \u2502 RUN: {{ .FormattedMs }} ",
+          "type": "executiontime"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#FF0055",
+          "options": {
+            "always_enabled": false
+          },
+          "style": "plain",
+          "template": " \u2502 \u2593\u2593 ERR: {{.Code}} ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#000000",
+          "foreground": "#FFFFFF",
+          "options": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " [ \ue7a8 ] ",
+          "type": "rust"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#FFFFFF",
+          "options": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " [ \ue718 ] ",
+          "type": "node"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#FFFFFF",
+          "options": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " [ \ue626 ] ",
+          "type": "go"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#FFFFFF",
+          "options": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " [ \ue235 ] ",
+          "type": "python"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#B51124",
+          "options": {
+            "time_format": "15:04"
+          },
+          "style": "plain",
+          "template": " [ {{ .CurrentDate | date .Format }} ] ",
+          "type": "time"
+        }
+      ],
+      "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#B51124",
+          "style": "plain",
+          "template": " ➤",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{ .Folder }}",
+  "final_space": true,
+  "version": 4
+}
